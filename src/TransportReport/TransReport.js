@@ -1,7 +1,7 @@
 import './TransReport.css';
 import React, { useState, useEffect } from 'react';
 import TokenService from '../services/token-service';
-const { API_SERVER_TOKEN, API_SERVER_URL } = require('../config');
+const { API_SERVER_URL } = require('../config');
 
 function TransReport(props) {
   const [transportData, setTransportData] = useState();
@@ -11,16 +11,10 @@ function TransReport(props) {
     loadOnce();
   }, []);
 
-  // useEffect(() => {
-  //   console.log(transportData);
-  //   console.log(errorMessage);
-  // });
-
   const loadOnce = () => {
     fetch(`${API_SERVER_URL}/api/imedtransport/user/transportlog/`, {
       headers: {
         'content-type': 'application/json',
-        // Authorization: `Bearer ${API_SERVER_TOKEN}`,
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
     })
@@ -32,8 +26,6 @@ function TransReport(props) {
       })
       .then((data) => {
         setTransportData(data);
-        // console.log(transportData);
-        // console.log(errorMessage);
       })
       .catch((error) => {
         setErrorMessage(error.message);
@@ -67,6 +59,7 @@ function TransReport(props) {
 
   return (
     <main className="main">
+      <div className="alert">{errorMessage && <p className="error">{errorMessage}</p>}</div>
       <section>
         <table className="blueTable">
           <thead>
@@ -91,51 +84,7 @@ function TransReport(props) {
               </td>
             </tr>
           </tfoot>
-          <tbody>
-            {transportData && renderTableData()}
-            {/* <tr>
-              <td>Client 1</td>
-              <td>Pickup Address 1</td>
-              <td>Drop off Address 1</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Client 2</td>
-              <td>Pickup Address 2</td>
-              <td>Drop off Address 2</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Client 3</td>
-              <td>Pickup Address 3</td>
-              <td>Drop off Address 3</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Client 4</td>
-              <td>Pickup Address 4</td>
-              <td>Drop off Address 4</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Client 5</td>
-              <td>Pickup Address 5</td>
-              <td>Drop off Address 5</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Client 6</td>
-              <td>Pickup Address 6</td>
-              <td>Drop off Address 6</td>
-              <td>11</td>
-            </tr>
-            <tr>
-              <td>Client 7</td>
-              <td>Pickup Address 7</td>
-              <td>Drop off Address 7</td>
-              <td>11</td>
-            </tr> */}
-          </tbody>
+          <tbody>{transportData && renderTableData()}</tbody>
         </table>
       </section>
     </main>

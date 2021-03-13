@@ -36,7 +36,6 @@ function Nav(props) {
       <Link className="links" to={'/'}>
         Home
       </Link>
-      {/* <Link to={'/registration'}>Registration</Link> */}
       <Link to={'/transportEntry'}>Request Transport</Link>
       <Link to={'/transportReport'}>TransportReport</Link>
 

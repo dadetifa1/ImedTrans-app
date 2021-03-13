@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Registration.css';
-import ValidationError from '../ValidationError';
 const { API_SERVER_TOKEN, API_SERVER_URL } = require('../config');
 
 function Registration(props) {
@@ -8,14 +7,6 @@ function Registration(props) {
   const [userName, setUserName] = useState({ value: '', touched: false });
   const [userPassword, setUserPassword] = useState();
   const [errorMessage, setErrorMessage] = useState();
-
-  // const validateDollarAmount = () => {
-  //   let re = /\S+@\S+\.\S+/;
-
-  //   if (!re.test(userEmail.value)) {
-  //     return 'na bitch';
-  //   }
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,8 +39,6 @@ function Registration(props) {
       });
   };
 
-  // const emailformError = validateDollarAmount();
-
   return (
     <main className="main">
       <form onSubmit={(e) => handleSubmit(e)}>
@@ -66,15 +55,12 @@ function Registration(props) {
               id="emailAddress"
               type="email"
               name="emailAddress"
-              // onChange={(e) => setUserEmail(e.target.value)}
-              // onChange={(e) => setUserEmail({ ...userEmail, touched: true })}
               onChange={(e) => {
                 const newEmail = { value: e.target.value, touched: true };
-                setUserEmail(newEmail); // Now it works
+                setUserEmail(newEmail);
               }}
               required
             />
-            {/* {userEmail.touched && <ValidationError message={emailformError} />} */}
           </div>
         </div>
         <div className="item">

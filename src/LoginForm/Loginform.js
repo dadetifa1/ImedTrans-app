@@ -4,11 +4,7 @@ import AuthApiService from '../services/article-api-service';
 import { Button, Input } from '../Utils/Utils';
 
 function LoginForm(props) {
-  // static defaultProps = {
-  //   onLoginSuccess: () => {},
-  // };
   const [error, setError] = useState();
-  // state = { error: null };
 
   const handleLoginSuccessLocal = () => {
     props.onsuccessfulLogin();
@@ -19,7 +15,6 @@ function LoginForm(props) {
 
   const handleSubmitJwtAuth = (ev) => {
     ev.preventDefault();
-    // this.setState({ error: null });
     const { user_name, password } = ev.target;
 
     AuthApiService.postLogin({

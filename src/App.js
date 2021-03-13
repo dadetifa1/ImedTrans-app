@@ -8,7 +8,6 @@ import TransportEntry from './TransportEntry/TransportEntry';
 import Registration from './Registration/Registration';
 import Loginform from './LoginForm/Loginform';
 import PrivateRoute from './Utils/PrivateRoute';
-import PublicOnlyRoute from './Utils/PublicOnlyRoute';
 import './App.css';
 
 function App() {
@@ -44,8 +43,6 @@ function App() {
 
       <Route exact path="/registration" component={Registration} />
 
-      {/* <Route path={'/login'} component={Loginform} onsuccessfulLogin={() => {handleLoginSuccess()} /> */}
-
       <Route
         path="/login"
         render={(props) => (
@@ -57,21 +54,6 @@ function App() {
           />
         )}
       />
-
-      {/* <PublicOnlyRoute path={"/login"} component={LoginPage} /> */}
-
-      {/* <Route
-        exact
-        path="/salesentry/update/:id"
-        render={({ match, history }) => <SaleEntryUpdate id={match.params.id} history={history} />}
-      /> */}
-
-      {/* <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
-            <PrivateRoute
-              path={"/article/:articleId"}
-              component={ArticlePage}
-            /> */}
-
       <Footer />
     </main>
   );
