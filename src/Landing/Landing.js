@@ -12,7 +12,7 @@ class Landing extends React.Component {
             The app will allow a user to book a non-emergency transportation to everyday destinations. The app will
             provide details of the trip to the user and the transportation company.
           </h4>
-          <Link to={'/collection'}>Register</Link>
+          <Link to={'/registration'}>Register</Link>
         </header>
       </main>
     );
