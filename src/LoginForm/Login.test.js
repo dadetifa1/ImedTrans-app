@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Registration from './Registration';
+import Loginform from './Loginform';
 
-it('Renders Registration component without crashing', () => {
+it('Renders Loginform component without crashing', () => {
   const div = document.createElement('div');
 
   ReactDOM.render(
     <Router>
-      <Registration />
+      <Loginform />
     </Router>,
     div,
   );
