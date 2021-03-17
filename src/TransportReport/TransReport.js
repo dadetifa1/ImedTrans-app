@@ -75,11 +75,11 @@ function TransReport(props) {
             <tr>
               <td colSpan="4">
                 <div className="links">
-                  <a href="#">&laquo;</a>{' '}
-                  <a className="active" href="#">
+                  {/* <a href="#">&laquo;</a>{' '} */}
+                  {/* <a className="active" href="#">
                     1
-                  </a>{' '}
-                  <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a>
+                  </a>{' '} */}
+                  {/* <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">&raquo;</a> */}
                 </div>
               </td>
             </tr>
