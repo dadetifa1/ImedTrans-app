@@ -54,6 +54,8 @@ function TransportEntry(props) {
   const handleGetRequestData = (e) => {
     e.preventDefault();
 
+    Geocode.setApiKey(GEOCODE_API_TOKEN);
+
     const pickUpFullAddress = `${pickUpStreet},${pickUpCity},${pickUpState},${pickUpZip}`;
     const desFullAddress = `${desStreet},${desCity},${desState},${desZip}`;
 
