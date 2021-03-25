@@ -5,15 +5,20 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
-  color: #8d99ae;
+  color: #2b2d42;
   text-align: center;
   line-height: 1.5;
+  background-color: #ffff;
 }
 
 footer {
   padding: 1% 0;
   background-color: #2b2d42;
   color: #f2f2f2;
+}
+
+.app-container {
+  height: 100vh;
 }
 
 header {

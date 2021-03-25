@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 class Landing extends React.Component {
   render() {
     return (
-      <main role="main">
-        <header role="banner">
+      <main className="app-container">
+        <header>
           <h1>IMedTrans</h1>
-          <h4>
+          <p>
             The app will allow a user to book a non-emergency transportation to everyday destinations. The app will
             provide details of the trip to the user and the transportation company.
-          </h4>
+          </p>
           <Link to={'/registration'}>Register</Link>
         </header>
       </main>

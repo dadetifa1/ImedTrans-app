@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <main className="App">
+    <main className="app">
       <Nav refreshafterlogin={reFreshNav} />
 
       <Route exact path="/" component={Landing} />
