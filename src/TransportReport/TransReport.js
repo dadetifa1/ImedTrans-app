@@ -61,7 +61,7 @@ function TransReport(props) {
     <main className="main">
       <div className="alert">{errorMessage && <p className="error">{errorMessage}</p>}</div>
       <section>
-        <table className="blueTable">
+        <table className="styled-table">
           <thead>
             <tr>
               <th>Client</th>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../services/token-service';
+import './Nav.css';
 
 function Nav(props) {
   const [remountCount, setRemountCount] = useState(0);
@@ -12,7 +13,7 @@ function Nav(props) {
 
   const renderLogoutLink = () => {
     return (
-      <div className="Header__logged-in">
+      <div className="Nav_right Header_logged-in">
         <Link onClick={handleLogoutClick} to="/">
           Logout
         </Link>
@@ -22,7 +23,7 @@ function Nav(props) {
 
   const renderLoginLink = () => {
     return (
-      <div className="Header__not-logged-in">
+      <div className="Nav_right Header_not-logged-in">
         <Link to="/registration">Register</Link>
         {' - '}
         <Link to="/login">Log in</Link>
@@ -37,7 +38,7 @@ function Nav(props) {
         Home
       </Link>
       <Link to={'/transportEntry'}>Request Transport</Link>
-      <Link to={'/transportReport'}>TransportReport</Link>
+      <Link to={'/transportReport'}>Transport Report</Link>
 
       {TokenService.hasAuthToken() ? renderLogoutLink() : renderLoginLink()}
     </nav>

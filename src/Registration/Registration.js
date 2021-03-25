@@ -41,65 +41,65 @@ function Registration(props) {
 
   return (
     <main className="main">
-      <form onSubmit={(e) => handleSubmit(e)}>
-        {errorMessage && <h3 className="error"> {errorMessage} </h3>}
-        <div className="banner">
-          <h3>Sign up</h3>
-        </div>
-        <div className="item">
-          <div>
-            <label htmlFor="emailAddress">
-              Email Address<span>*</span>
-            </label>
-            <input
-              id="emailAddress"
-              type="email"
-              name="emailAddress"
-              onChange={(e) => {
-                const newEmail = { value: e.target.value, touched: true };
-                setUserEmail(newEmail);
-              }}
-              required
-            />
+      <div className="reg">
+        <h1>Sign up</h1>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          {errorMessage && <h3 className="error"> {errorMessage} </h3>}
+          <div className="item">
+            <div>
+              <label htmlFor="emailAddress">
+                Email Address<span>*</span>
+              </label>
+              <input
+                id="emailAddress"
+                type="email"
+                name="emailAddress"
+                onChange={(e) => {
+                  const newEmail = { value: e.target.value, touched: true };
+                  setUserEmail(newEmail);
+                }}
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div className="item">
-          <div>
-            <label htmlFor="username">
-              User name<span>*</span>
-            </label>
-            <input
-              id="username"
-              type="text"
-              name="username"
-              onChange={(e) => {
-                const newUsername = { value: e.target.value, touched: true };
-                setUserName(newUsername);
-              }}
-              required
-            />
+          <div className="item">
+            <div>
+              <label htmlFor="username">
+                User name<span>*</span>
+              </label>
+              <input
+                id="username"
+                type="text"
+                name="username"
+                onChange={(e) => {
+                  const newUsername = { value: e.target.value, touched: true };
+                  setUserName(newUsername);
+                }}
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div className="item">
-          <div>
-            <label htmlFor="userPassword">
-              Password<span>*</span>
-            </label>
-            <input
-              id="userPassword"
-              type="password"
-              name="Password"
-              onChange={(e) => setUserPassword(e.target.value)}
-              required
-            />
+          <div className="item">
+            <div>
+              <label htmlFor="userPassword">
+                Password<span>*</span>
+              </label>
+              <input
+                id="userPassword"
+                type="password"
+                name="Password"
+                onChange={(e) => setUserPassword(e.target.value)}
+                required
+              />
+            </div>
           </div>
-        </div>
-        <div className="btn-block">
-          <button type="submit" href="/">
-            Submit
-          </button>
-        </div>
-      </form>
+          <div className="btn-block">
+            <button type="submit" href="/">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
   );
 }
